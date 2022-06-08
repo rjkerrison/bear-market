@@ -1,5 +1,5 @@
 const Bear = require('../models/Bear.model.js')
-const openConnection = require('../db/index.js')
+const connection = require('../db/index.js')
 const { default: mongoose } = require('mongoose')
 
 // SEED the database
@@ -12,7 +12,7 @@ const bears = [
 ]
 
 async function seedBears() {
-  await openConnection()
+  await connection
   const createdBears = await Bear.create(bears)
   console.log(`Created ${createdBears.length} bears.`)
   await mongoose.connection.close()

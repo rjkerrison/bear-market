@@ -1,5 +1,5 @@
 const Market = require('../models/Market.model.js')
-const openConnection = require('../db/index.js')
+const connection = require('../db/index.js')
 
 // SEED the database
 // adding initial data from an external source (or handcoded)
@@ -41,7 +41,7 @@ function convertProduct(product) {
 }
 
 async function seedMarkets() {
-  await openConnection()
+  await connection
   const convertedMarkets = rawMarkets.map(convertRawMarketToSchema)
 
   const createdMarkets = await Market.create(convertedMarkets)
