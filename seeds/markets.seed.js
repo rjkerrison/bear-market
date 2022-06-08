@@ -1,5 +1,5 @@
 const Market = require('../models/Market.model.js')
-const openConnection = require('../db/connect.js')
+const openConnection = require('../db/index.js')
 
 // SEED the database
 // adding initial data from an external source (or handcoded)

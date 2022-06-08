@@ -1,5 +1,5 @@
 const Bear = require('../models/Bear.model.js')
-const openConnection = require('../db/connect.js')
+const openConnection = require('../db/index.js')
 const { default: mongoose } = require('mongoose')
 
 // SEED the database
